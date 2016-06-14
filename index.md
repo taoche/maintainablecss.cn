@@ -9,7 +9,7 @@ id: home
 
 	<h1>MaintainableCSS</h1>
 	<p>
-		<em>MaintainableCSS</em> 是帮助你书写<em>模块化</em>、<em>可拓展</em>、<em>易维护</em>的CSS方法论。让你放心的书写CSS样式, 而不必担心样式的冲突。
+		<em>MaintainableCSS</em> 是帮助你书写「模块化」、「可拓展」、「易维护」的CSS方法论。让你放心的书写CSS样式, 而不必担心样式的冲突。
 	</p>
 	<a class="hero-button" href="/maintainablecss.cn/chapters/introduction/">Read now</a>
 </div>
@@ -78,7 +78,7 @@ id: home
 			<h3>易于 AB 测试与升级</h3>
 			<p>想要测试一个模块的不同样式？MaintainableCSS 让其变得简单</p>
 		</div>
-		<a class="benefit-readNowButton" href="/chapters/introduction">Read now</a>
+		<a class="benefit-readNowButton" href="/chapters/introduction">开始阅读</a>
 	</div>
 </div>
 <div class="recommendations">
