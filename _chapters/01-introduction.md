@@ -1,37 +1,37 @@
 ---
 layout: chapter
-title: Introduction
+title: Introduction / 介绍
 section: Preface
 permalink: /chapters/introduction/
 description: An introduction to MaintainableCSS, an approach to writing modular, scalable and of course maintainable CSS.
 ---
 
-*MaintainableCSS* is an approach to architecting and writing CSS that helps you and your team write modular, scalable and maintainable code.
+*MaintainableCSS* 是帮助你和你的团队编写模块化、可拓展、易维护的方法论.
 
-In practical terms, this means that as a developer I want to create new features, or edit existing features without having to concern myself with overriding styles I don't want applied, or worse that the code I write causes regression elsewhere.
+实际而言，这意味着开发者在新写或修改特性时，不必担心无意中覆盖样式或者弄乱代码.
 
-## There is nothing to download
+## 无需下载
 
-*MaintainableCSS* is not something you can download. It's a set of principles, guides and conventions that help you write CSS for large or small scale websites.
+*MaintainableCSS* 无需下载. 这是一套编码规范、指南、约定，适用于开发任何规模的网站.
 
-## What does maintainable even mean?
+## 什么是可维护性?
 
-Having maintainable code means that I can edit a module and its styles without worrying that I have negatively caused problems in other modules by accident. I want to be able to write code that provides peace of mind knowing that my code is encapsulated.
+可维护的代码意味着我在编写一个模块的样式时，不必担心会影响其他模块。我希望编写的代码都是封装好的，这样就担忧它会污染别的代码.
 
-## What does scalable even mean?
+## 什么是可扩展性?
 
-This means, that as the CSS codebase increases in size, that maintaining code (see previous point) isn't any harder. If you have ever inherited a large CSS codebase, and been worried about editing existing styles, you can sympathise with this.
+可扩展性是指随着CSS代码量的增长，代码的可维护性并不随之降低。如果你曾接手过一个庞大的CSS代码库并试图修改已有样式，那你一定对此深有感触.
 
-## What does modular even mean?
+## 什么是模块化?
 
-A module is a distinct, independent unit, that can be combined with other modules to form a more complex structure. In a living room, you can consider the TV, the sofa and the wall art to be modules, all coming together to create a useable room.
+模块是一个特有的、独立的单元，可以与其他模块组合成更加复杂的结构，你可以想象客厅里的电视机、沙发和艺术墙都是模块，它们组合在一起便是一个可用的房间.
 
-If you take one of the units away, the rest still works just fine. I don't need the TV to be able to sit on the sofa etc. In a website, the header, footer, product list, article etc can all be considered modules.
+如果移除某个单元，剩下的单元依然可以正常工作。我不一定需要坐在沙发上看电视。网页中的页头、页脚、产品列表、文章 等都可以被看作模块.
 
-## Who is this for?
+## 目标读者?
 
-If you have ever experienced pain in maintaining CSS, this book can help you avoid common problems. Whether you're in a team of 1 or 100, I think you will find useful advice in this book. Even more so if your site is constantly evolving.
+如果你曾为维护CSS苦不堪言， 这本书将帮你避免常见问题。无论你团队规模的大小，都能在本书中找到一些有用的建议。如果你的网站还在不断发展，那就更应该仔细阅读本书.
 
-## How hard is this to learn?
+## 学习难度?
 
-I would say it's very easy to learn. You can read the entire book in under 20 minutes and apply the rules in minutes. Let me know if I am wrong though :).
+我会说本书很容易学习。不超过20分钟你就能读完整本书，几分钟内就可以使用书中的规则。如果我说的不对，尽管来找我 :).
