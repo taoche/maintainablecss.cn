@@ -1,53 +1,53 @@
 ---
 layout: chapter
-title: Reuse
+title: Reuse / 复用
 section: Background
 permalink: /chapters/reuse/
 description: Learn why avoding reuse and embracing repetition makes CSS maintenance easier.
 ---
 
-**Summary:** Don't try and reuse styles. Adopt a duplication-first approach.
+**摘要:** 不要尝试复用样式. 优先采用删除重复内容.
 
-> &ldquo;DRY is often misinterpreted as the necessity to never repeat the exact same thing twice [...]. This is impractical and usually counterproductive, and can lead to forced abstractions, over-thought and [over]-engineered code.&ldquo;
+> &ldquo;DRY(Don't repeat yourself / 不要重复自己)常被误解为永远不要重复做同样的事情[…]. 这是不切实际的，通常适得其反， 并可能导致强制抽象、过度思考和过度设计的代码.&ldquo;
 <br>&mdash; <cite>Harry Roberts, CSS Wizardy</cite>
 
-Don't take this the wrong way&mdash;MaintainableCSS has various strategies for reuse which I will talk about later. The problem is that trying to reuse the bits *inbetween* the curly braces is problematic. Here's why:
+不要采取这种错误的方式&mdash;MaintainableCSS 具备可复用性，我将在以后讨论它. 问题是尝试重用花括号之间的代码是有问题的. 原因如下:
 
-## Because styles change based on breakpoints.
+## 因为样式随着视图改变
 
-Building responsive sites mean that we style elements differently based on viewport size. Imagine trying to build a 2 column grid that:
+建立响应式的网站时，我们添加的样式是基于不同的窗口尺寸的. 假设我们要构建一个两列网格:
 
-- has 50px and 20px padding on large and small screens respectively.
-- has 3em and 2em font-size on large and small screens respectively.
-- on small screens each column is stacked below each other. Note: "column" is now misleading.
+- 大屏幕和小屏幕下padding属性值分别为50px和20px.
+- 大屏幕和小屏幕下font-size属性值分别为3em and 2em.
+- 小屏幕下， 每一列都堆放在上一列的下面。注：「列」现在是误导.
 
-With this in mind how can you utilise these atomic class names: `.grid`, `.col`, `.pd50`, `.pd20`, `.fs2` and `fs3` and achieve these specs?
+考虑到这一点， 你怎么使用这些原子类： `.grid`, `.col`, `.pd50`, `.pd20`, `.fs2` and `fs3` 实现以上需求?
 
-	<div class="grid">
-	  <div class="col pd50 pd20 fs3 fs2">Column 1</div>
-	  <div class="col pd50 pd20 fs3 fs2">Column 2</div>
-	</div>
+  <div class="grid">
+    <div class="col pd50 pd20 fs3 fs2">Column 1</div>
+    <div class="col pd50 pd20 fs3 fs2">Column 2</div>
+  </div>
 
-You can see this just isn't going to work. You now need some crazy class names such as `fs3large`. This is just the tip of iceberg when it comes to maintenance issues.
+你可以看到这恰恰是行不通的. 为了实现需求，你需要一些疯狂的类名，比如 `fs3large`. 这只涉及到维护问题的冰山一角.
 
-Alternatively, take the following semantic mark-up that doesn't attempt to reuse styles:
+或者，试试下面没有复用样式的语义化标记:
 
-	<div class="someModule">
-	  <div class="someModule-someComponent"></div>
-	  <div class="someModule-someOtherComponent"></div>
-	</div>
+  <div class="someModule">
+    <div class="someModule-someComponent"></div>
+    <div class="someModule-someOtherComponent"></div>
+  </div>
 
-Ensuring this is styled as specified above, is now a simple task with 6 CSS declarations needed in total, 3 of which reside within media queries.
+如果按照上面的方式添加样式, 现在这个简单的任务总共声明了6个CSS类, 其中3个应用在Media Query.
 
-## Because styles change based on states.
+## 因为样式随着状态改变.
 
-How do you make `<a class="padding-left-20 red" href="#"></a>` to have padding 18px, a slight border, a background of grey and a text colour as a slightly darker shade of red when it's hovered or focused of active i.e. `:hover`,`:focus`, `:active` etc?
+如何让 `<a class="padding-left-20 red" href="#"></a>` 在触摸或者获取焦点时样式发生以下的改变：padding值变为18px，添加一个浅色的边框，背景变为灰色，红色文字稍加阴影 （动作如 `:hover`,`:focus`, `:active` 等）?
 
-The short answer is you can't. Try to avoid having to fix self-induced problems.
+简短的答案是不行。尽量避免去修复自找的问题.
 
-## Because reuse makes debugging more difficult.
+## 因为复用让调试更困难.
 
-When debugging an element, there will be several applicable CSS selectors playing a part making it noisy.
+当调试一个元素时，会有一些起作用的CSS选择器使调试变得复杂.
 
 ## Because granular styles aren't worth bothering with.
 
@@ -73,7 +73,7 @@ Note: if you have a repeated *component* within a module, then searching might y
 
 If you attempt to reuse every single *rule* you'll end up with classes such as: `red`, `clearfix`, `pull-left`, `grid` which leads to HTML bloat:
 
-	<div class="clearfix pull-left red etc">
+  <div class="clearfix pull-left red etc">
 
 Bloat makes it harder to maintain and degrades performance (albeit in a minor way).
 
@@ -87,13 +87,13 @@ It is extremely rare, but there are times when it really does make sense to reus
 
 For example let's say you wanted a bunch of different modules or components to have red text you might do this:
 
-	/* colours.css */
+  /* colours.css */
 
-	/* red text */
-	.someSelector,
-	.someOtherSelector {
-		color: red;
-	}
+  /* red text */
+  .someSelector,
+  .someOtherSelector {
+    color: red;
+  }
 
 Remember though that if any selector deviates, even a little bit, then remove it from the common list and duplicate. You must be very careful with something like this. Do it for convenience, not for performance. Your mileage may vary.
 
